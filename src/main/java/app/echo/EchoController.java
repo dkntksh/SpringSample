@@ -1,4 +1,4 @@
-package example.app;
+package app.echo;
 
 import javax.validation.Valid;
 

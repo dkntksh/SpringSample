@@ -13,7 +13,7 @@
   </context-param>
   <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>example.config.AppConfig</param-value>
+    <param-value>app.config.AppConfig</param-value>
   </context-param>
   <filter>
     <filter-name>CharacterEncodingFilter</filter-name>
@@ -46,7 +46,7 @@
     </init-param>
     <init-param>
       <param-name>contextConfigLocation</param-name>
-      <param-value>example.config.WebMvcConfig</param-value>
+      <param-value>app.config.WebMvcConfig</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
