@@ -15,7 +15,12 @@
 		<br/>
 		<div>
 			<form:checkbox path="checkTest" items="${echoForm.checkTest}" label="チェックボックスのテスト"/>
-			<form:errors path="selectTest" />
+			<form:errors path="checkTest" />
+		</div>
+		<br/>
+		<div>
+			<form:checkboxes path="checkBoxesTest" items="${echoForm.checkBoxesList}" itemLabel="name" itemValue="id" delimiter=" "/>
+			<form:errors path="checkBoxesTest" />
 		</div>
 		<div>
 			<form:button>送信</form:button>

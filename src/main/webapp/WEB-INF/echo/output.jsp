@@ -15,6 +15,13 @@
 	<div>
 		<span><c:out value="${echoForm.checkTest}" /></span>
 	</div>
+	<br/>
+	<div>複数選択チェックボックスは</div>
+	<div>
+		<c:forEach items="${echoForm.checkBoxesTest}" var="id">
+   			<c:out value="${id}" />
+  		</c:forEach>
+	</div>
 	<div>です。</div>
 	<br>
 	<div>

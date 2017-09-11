@@ -17,11 +17,10 @@ public class EchoController {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String viewInput(Model model){
-		
-		
 		// 初期値設定
 		EchoForm form = new EchoForm();
 		this.settingSelectBox(form);
+		this.settingCheckBoxes(form);
 		model.addAttribute(form);
 		return "echo/input";
 	}
@@ -31,6 +30,7 @@ public class EchoController {
 		// 入力チェック
 		if(result.hasErrors()){
 			settingSelectBox(form);
+			this.settingCheckBoxes(form);
 			return "echo/input";
 		}
 		return "echo/output";
@@ -41,12 +41,21 @@ public class EchoController {
 	 * @param model
 	 */
 	private void settingSelectBox(EchoForm form){
-		List<SelectTestBean> selectTestList = new ArrayList<SelectTestBean>();
+		List<SelectTestBean> selectBoxList = new ArrayList<SelectTestBean>();
 				
-		selectTestList.add(new SelectTestBean(0, ""));
-		selectTestList.add(new SelectTestBean(1, "test"));
-		selectTestList.add(new SelectTestBean(2, "テスト"));
-		selectTestList.add(new SelectTestBean(3, "てすと"));		
-		form.setSelectTestList(selectTestList);
+		selectBoxList.add(new SelectTestBean(0, ""));
+		selectBoxList.add(new SelectTestBean(1, "test"));
+		selectBoxList.add(new SelectTestBean(2, "テスト"));
+		selectBoxList.add(new SelectTestBean(3, "てすと"));		
+		form.setSelectTestList(selectBoxList);
+	}
+	
+	private void settingCheckBoxes(EchoForm form){
+		List<CheckBoxesTestBean> selectTestList = new ArrayList<CheckBoxesTestBean>();
+		selectTestList.add(new CheckBoxesTestBean(123, "Spring"));
+		selectTestList.add(new CheckBoxesTestBean(456, "Framework"));
+		selectTestList.add(new CheckBoxesTestBean(789, "MVC"));		
+		form.setCheckBoxesList(selectTestList);
+		
 	}
 }
