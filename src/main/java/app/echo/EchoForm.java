@@ -21,6 +21,8 @@ public class EchoForm implements Serializable {
 	// セレクトボックスの選択肢
 	private List<SelectTestBean> selectTestList;
 	
+	// チェックボックス
+	private boolean checkTest;
 
 	public String getText() {
 		return text;
@@ -44,5 +46,13 @@ public class EchoForm implements Serializable {
 
 	public void setSelectTestList(List<SelectTestBean> selectTestList) {
 		this.selectTestList = selectTestList;
+	}
+
+	public boolean isCheckTest() {
+		return checkTest;
+	}
+
+	public void setCheckTest(boolean checkTest) {
+		this.checkTest = checkTest;
 	}
 }

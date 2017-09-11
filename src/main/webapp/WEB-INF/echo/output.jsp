@@ -6,8 +6,14 @@
 		<span><c:out value="${echoForm.text}" /></span>
 	</div>
 	<br/>
+	<div>選択されたIDは</div>
 	<div>
 		<span><c:out value="${echoForm.selectTest}" /></span>
+	</div>
+	<br/>
+	<div>チェックボックスは</div>
+	<div>
+		<span><c:out value="${echoForm.checkTest}" /></span>
 	</div>
 	<div>です。</div>
 	<br>
