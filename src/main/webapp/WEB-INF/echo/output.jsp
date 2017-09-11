@@ -5,6 +5,10 @@
 	<div>
 		<span><c:out value="${echoForm.text}" /></span>
 	</div>
+	<br/>
+	<div>
+		<span><c:out value="${echoForm.selectTest}" /></span>
+	</div>
 	<div>です。</div>
 	<br>
 	<div>
