@@ -18,16 +18,14 @@
 		<br/>
 		<div>
 			<input type="checkbox" 	name="checkTest" value="true" th:field="${echoForm.checkTest}"/>
-			<span th:if="${#fields.hasErrors('checkTest')}" th:errors="checkTest">testSelectのエラーメッセージ</span>
+			<span th:if="${#fields.hasErrors('checkTest')}" th:errors="checkTest">testCheckBoxのエラーメッセージ</span>
 		</div>
 		<br/>
-		<!--
-		<div>
-			<form:checkboxes path="checkBoxesTest" items="${echoForm.checkBoxesList}" itemLabel="name" itemValue="id" delimiter=" "/>
-			<form:errors path="checkBoxesTest" />
+		<div th:each="item : ${echoForm.checkBoxesList}">
+			<input type="checkbox" name="checkBoxesTest" th:value="${item.id}" th:text="${item.name}" th:field="*{checkBoxesTest}"/>
+			<span th:if="${#fields.hasErrors('checkBoxesTest')}" th:errors="checkBoxesTest">checkBoxesTestのエラーメッセージ</span>
 		</div>
 		<br/>
-		 -->
 		<div>
 			<button type="submit">送信</button>
 		</div>

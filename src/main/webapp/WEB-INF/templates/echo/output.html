@@ -16,15 +16,11 @@
 	<div>
 		<span th:text="*{echoForm.checkTest}">checkTestの結果</span>
 	</div>
-	<!-- 
-	<br/>
+	<br />
 	<div>複数選択チェックボックスは</div>
 	<div>
-		<c:forEach items="${echoForm.checkBoxesTest}" var="id">
-   			<c:out value="${id}" />
-  		</c:forEach>
+   		<span th:each="result : ${echoForm.checkBoxesTest}" th:text="${result}">checkBoxesTestの結果</span>
 	</div>
-	-->
 	<div>です。</div>
 	<br />
 	<div>
