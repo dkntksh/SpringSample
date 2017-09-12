@@ -16,12 +16,12 @@
 			<span th:if="${#fields.hasErrors('selectTest')}" th:errors="*{selectTest}">testSelectのエラーメッセージ</span>
 		</div>
 		<br/>
-		<!--
 		<div>
-			<form:checkbox path="checkTest" items="${echoForm.checkTest}" label="チェックボックスのテスト"/>
-			<form:errors path="checkTest" />
+			<input type="checkbox" 	name="checkTest" value="true" th:field="${echoForm.checkTest}"/>
+			<span th:if="${#fields.hasErrors('checkTest')}" th:errors="checkTest">testSelectのエラーメッセージ</span>
 		</div>
 		<br/>
+		<!--
 		<div>
 			<form:checkboxes path="checkBoxesTest" items="${echoForm.checkBoxesList}" itemLabel="name" itemValue="id" delimiter=" "/>
 			<form:errors path="checkBoxesTest" />

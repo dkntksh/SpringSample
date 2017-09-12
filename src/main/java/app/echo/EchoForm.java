@@ -53,7 +53,7 @@ public class EchoForm implements Serializable {
 		this.selectTestList = selectTestList;
 	}
 
-	public boolean isCheckTest() {
+	public boolean getCheckTest() {
 		return checkTest;
 	}
 
