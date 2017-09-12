@@ -9,12 +9,14 @@
 			<span th:if="${#fields.hasErrors('text')}" th:errors="*{text}">textのエラーメッセージ</span>
 		</div>
 		<br />
-				<!--
 		<div>
-			<form:select path="selectTest" items="${echoForm.selectTestList}" itemLabel="name" itemValue="id" delimiter=" "/>
-			<form:errors path="selectTest" />
+			<select id="selectTest" name="selectTest">
+				<option th:each="tst : ${echoForm.selectTestList}" th:value="${tst.id}" th:selected="${selectTest}" th:inline="text">[[${tst.name}]]</option>
+			</select>
+			<span th:if="${#fields.hasErrors('selectTest')}" th:errors="*{selectTest}">testSelectのエラーメッセージ</span>
 		</div>
 		<br/>
+		<!--
 		<div>
 			<form:checkbox path="checkTest" items="${echoForm.checkTest}" label="チェックボックスのテスト"/>
 			<form:errors path="checkTest" />
