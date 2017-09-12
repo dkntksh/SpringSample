@@ -1,13 +1,15 @@
-<html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <body>
 	<h2>入力画面</h2>
-	<form:form action="${submitUrl}" modelAttribute="echoForm">
+	<form action="./output.html" th:action="@{/echo}" th:object="${echoForm}" method="POST">
 		<div>テキストを入力してください：</div>
 		<div>
-			<form:input path="text" />
-			<form:errors path="text" />
+			<input type="text" name="text" th:field="*{text}"/><br />
+			<span th:if="${#fields.hasErrors('text')}" th:errors="*{text}">textのエラーメッセージ</span>
 		</div>
-		<br/>
+		<br />
+				<!--
 		<div>
 			<form:select path="selectTest" items="${echoForm.selectTestList}" itemLabel="name" itemValue="id" delimiter=" "/>
 			<form:errors path="selectTest" />
@@ -22,9 +24,11 @@
 			<form:checkboxes path="checkBoxesTest" items="${echoForm.checkBoxesList}" itemLabel="name" itemValue="id" delimiter=" "/>
 			<form:errors path="checkBoxesTest" />
 		</div>
+		<br/>
+		 -->
 		<div>
-			<form:button>送信</form:button>
+			<button type="submit">送信</button>
 		</div>
-	</form:form>
+	</form>
 </body>
 </html>
