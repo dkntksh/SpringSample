@@ -3,7 +3,21 @@
 <body>
 	<h2>一覧画面</h2>
 	<form action="./detail/detail.html" th:action="@{/init}" th:object="${listForm}" method="POST">
-		
+		<table>
+			<tr>
+				<th>名前</th><th>住所</th><th>年齢</th><th>リンク</th>
+			</tr>
+			<tr th:each="user : ${listForm.userList}">
+				<td th:text="${user.userName}"></td>
+				<td th:text="${user.userAdress}"></td>
+				<td th:text="${user.userAge}"></td>
+				<td>リンク</td>
+			</tr>
+		</table>
 	</form>
+	<br/>
+	<div>
+		<a href="../index.html" th:href="@{/}">トップ画面へ戻る</a>
+	</div>
 </body>
 </html>
