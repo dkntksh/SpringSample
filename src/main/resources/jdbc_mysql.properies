@@ -1,0 +1,8 @@
+database.driverClassName=org.gjt.mm.mysql.Driver
+database.url=jdbc:mysql://127.0.0.1:3306/sampledb
+database.userName=root
+database.password=
+cp.maxTotal=96
+cp.maxIdle=16
+cp.minIdle=0
+cp.maxWaitMillis=60000

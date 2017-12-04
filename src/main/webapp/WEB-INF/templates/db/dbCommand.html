@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+	<h2>DB操作画面</h2>
+	<form action="./db/dBCommand.html" th:action="@{/db/regist}" th:object="${dBCommandForm}" method="POST">
+		<p>商品登録</p>
+		<div>商品ID</div><div><input type="text" th:field="*{productId}"/></div>
+		<div>商品名</div><div><input type="text" th:field="*{productName}" /></div>
+		<div>商品コード</div><div><input type="text" th:field="*{productCd}" /></div>
+		<div><button type="submit">登録</button></div>
+	</form>
+	<p>登録済データ</p>
+	<table>
+			<tr>
+				<th>ID</th><th>商品名</th><th>商品コード</th>
+			</tr>
+			<tr th:each="data : ${dBCommandForm.dispList}">
+				<td th:text="${data.productId}"></td>
+				<td th:text="${data.prductName}"></td>
+				<td th:text="${data.productCd}"></td>
+			</tr>
+		</table>
+	<br />
+	<div>
+		<a href="./index.html" th:href="@{/}">メインメニュー画面へ戻る</a>
+	</div>
+</body>
+</html>
