@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<body>
+	<h2>一覧画面</h2>
+	<form action="./detail/detail.html" th:action="@{/init}" th:object="${listForm}" method="POST">
+		<table>
+			<tr>
+				<th>名前</th><th>住所</th><th>年齢</th><th>詳細リンク</th>
+			</tr>
+			<tr th:each="data : ${listForm.userList}">
+				<td th:text="${data.userName}"></td>
+				<td th:text="${data.userAdress}"></td>
+				<td th:text="${data.userAge}"></td>
+				<td><a href="./detail/detail.html" th:href="@{'/detail/'+${data.id}}">詳細画面へ</a></td>
+			</tr>
+		</table>
+	</form>
+	<br/>
+	<div>
+		<a href="../index.html" th:href="@{/}">トップ画面へ戻る</a>
+	</div>
+</body>
+</html>
