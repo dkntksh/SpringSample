@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+<h2>詳細画面</h2>
+	<div>ユーザID</div>
+	<p th:text="${detailFrom.userId}">userId</p>
+	<br/>
+	<div>
+		<a href="./list/list.html" th:href="@{/list}">一覧画面へ戻る</a>
+	</div>
+</body>
+</html>

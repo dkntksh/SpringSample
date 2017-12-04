@@ -7,6 +7,10 @@ package app.list;
  */
 public class ListData {
 	/**
+	 * id
+	 */
+	private long id;
+	/**
 	 * ユーザ名
 	 */
 	private String userName;
@@ -59,6 +63,20 @@ public class ListData {
 	 */
 	public void setUserAge(int userAge) {
 		this.userAge = userAge;
+	}
+	/**
+	 * IDの取得
+	 * @return
+	 */
+	public long getId() {
+		return id;
+	}
+	/**
+	 * IDの設定
+	 * @param id
+	 */
+	public void setId(long id) {
+		this.id = id;
 	}
 	
 }

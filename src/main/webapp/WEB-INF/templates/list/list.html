@@ -5,13 +5,13 @@
 	<form action="./detail/detail.html" th:action="@{/init}" th:object="${listForm}" method="POST">
 		<table>
 			<tr>
-				<th>名前</th><th>住所</th><th>年齢</th><th>リンク</th>
+				<th>名前</th><th>住所</th><th>年齢</th><th>詳細リンク</th>
 			</tr>
-			<tr th:each="user : ${listForm.userList}">
-				<td th:text="${user.userName}"></td>
-				<td th:text="${user.userAdress}"></td>
-				<td th:text="${user.userAge}"></td>
-				<td>リンク</td>
+			<tr th:each="data : ${listForm.userList}">
+				<td th:text="${data.userName}"></td>
+				<td th:text="${data.userAdress}"></td>
+				<td th:text="${data.userAge}"></td>
+				<td><a href="./detail/detail.html" th:href="@{'/detail/'+${data.id}}">詳細画面へ</a></td>
 			</tr>
 		</table>
 	</form>
